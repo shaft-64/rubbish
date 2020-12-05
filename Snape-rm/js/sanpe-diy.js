@@ -26,7 +26,22 @@ $(document).ready(function(){
     $(".article-sidebar #sidebar").affix({
         offset: {
             top:200,
-            bottom:16
+            bottom:208
      	}
     });
 });
+
+let top_search=document.getElementById("search-panel");
+let search=document.getElementById("a-search");
+let close=document.getElementById("close");
+close.addEventListener("click",()=> {
+    top_search.style.padding="0";
+    top_search.style.height="0";
+    top_search.style.display="none";
+})
+search.addEventListener("click",()=> {
+    top_search.style.height="auto";
+    top_search.style.display="block";
+    top_search.style.padding="10px 0";
+    console.log(123);
+})
