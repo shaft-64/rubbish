@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" type="text/css" href="css/Snape-diy.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <title>手把手教你新建项目(Create New Project)</title>
@@ -11,15 +12,28 @@
     <div class="wrapper">
         <!--header-->
         <div class="header">
-            <!--TODO-->
-            <div class="container">
+            <div id="search-panel" class="top-search-hidden display-none">
+                <div class="container">
+                    <div class="input-group clearfix ">
+                        <span class="input-group-addon float-left">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="text" id="s" name="s" placeholder="Search..." class="form-contorl">
+                        <span class="input-group-addon clearfix float-right" id="a-close">
+                            <i class="fa fa-close"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container clearfix">
                 <div class="navbar-header">
                     <a class="nav-title">DataErr0r</a>
                 </div>
                 <div class="attr-nav">
                     <ul>
                         <li class="search">
-                            <a href=#>
+                            <a id="a-search" href=#>
                                 <i class="fa fa-search"></i>
                             </a>
                         </li>

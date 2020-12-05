@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.div1 {
+    width:22px;
+    height:22px;
+    background-color: #000;
+    transition: 0.4s;
+}
+.div2 {
+    width:200px;
+    height:130px;
+    transition: 0.3s;
+    background-color: #000;
+}
+.div3 {
+    width:76px;
+    height:76px;
+    transition: 1s;
+    background-color: #000;
+}
+.newdiv1 {
+    transform: translatex(12px);
+    transition: 0.3s;
+    width:200px;
+    height:130px;
+    background-color: #000;
+}
+.newdiv2 {
+    transform: rotate(360deg);
+    transition: 1s;
+    width:76px;
+    height:76px;
+    background-color: #000;
+}
+.newdiv3 {
+    transform: scale(1,1);
+    transition: 0.4s;
+    width:22px;
+    height:22px;
+    background-color: #000;
+}
+
+</style>
+<script>
+    //上面我们预设了三个css3动画效果
+
+
+//js部分：
+let div1=document.getElementById("div1");
+let div2=document.getElementById("div2");
+let div3=document.getElementById("div3");
+div1.onmouseenter = function(){
+    div1.className = "newdiv1";    //此处要注意根据自己代码的实际情况来选中元素
+}
+div2.onmouseenter = function(){
+    div2.className  = "newdiv2";
+}
+div3.onmouseenter = function(){
+    div3.className  = "newdiv3";
+}
+    
+div1.onmouseleave = function(){
+    div1.className = "div1";       //要恢复原样只要将class类名改成原来的就可以了
+}
+div2.onmouseleave = function(){
+    div2.className  = "div2";
+}
+div3.onmouseleave = function(){
+    div3.className  = "div3";
+}
+</script>
+<body>
+    <div id="div1" class="div1"></div>
+    <div id="div2" class="div2"></div>
+    <div id="div3" class="div3"></div>
+</body>
+</html>
