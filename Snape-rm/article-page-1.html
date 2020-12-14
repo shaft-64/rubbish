@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/Snape-diy.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <title>使用bootstrap的affix实现sidebar位置固定</title>
+</head>
+<body data-spy="scroll" data-target="#sidebar">
+    <div class="wrapper">
+        <!--header-->
+        <div class="header">
+            <div id="search-panel" class="top-search-hidden display-none">
+                <div class="container">
+                    <div class="input-group clearfix ">
+                        <span class="input-group-addon float-left">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="text" id="s" name="s" placeholder="Search..." class="form-contorl">
+                        <span class="input-group-addon clearfix float-right" id="a-close">
+                            <i class="fa fa-close"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container clearfix">
+                <div class="navbar-header">
+                    <a href="page.html" class="nav-title">DataErr0r</a>
+                </div>
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search">
+                            <a id="a-search" href=#>
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <a id="a-mode" href=#>
+                                <i id="sun-moon" class="fa fa-moon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <!--banner-->
+        <div class="pageheader headtbanner
+        " style="background-image: url(https://dataerror.xyz/wp-content/uploads/2020/11/86ZGNDYD7RLK16WFXNH0A.jpg);background-position: center">
+            <div class="container container-title text-center">
+                <h2 class="title">
+                    使用bootstrap的affix实现sidebar位置固定
+                </h2>
+
+                <div class="text-center post-meta">
+                        <i class="fa fa-calender"></i>      <span>2020/7/1</span>
+                        <i class="fa fa-commenting-o"></i>  <span>0&nbsp;Comments</span>
+                        <i class="fa fa-eye"></i>           <span>80&nbsp;views</span> 
+                        <i class="fa fa-thumbs-o-up"></i>   <span>1&nbsp;Times</span>  
+                </div>
+            </div>
+        </div>
+
+        <div class="post-section post-main">
+            <div class="container">
+                <div class="row">
+                    <div class="section">
+                        <div class="article">
+                            <div class="post-inner post-border">
+                                <div class="post-content">
+                                    
+                  
+                                    <p>看到旁边这个导航栏了吗👉</p>
+                                    
+                                    <p>它会随着页面的滚动而变化位置，如果文章很长</p>
+                                    
+                                    <p>像这样👇</p>
+                                    
+                                    <p>链接:<a style="font-style: italic;" href="https://dataerror.xyz/?p=157&amp;preview=true"><span class="has-inline-color has-vivid-cyan-blue-color">这里面有很长的文章</span></a></p>
+                                    
+                                    <p>这样会让右半边区域显得很空，所以我们一般会选择使用position:fixed将其位置固定在右侧区域，不过也会有特殊情况👇</p>
+                                    
+                                    <img src="https://dataerror.xyz/wp-content/uploads/2020/12/image-1024x609.png">                          
+                                    
+                                    <h3><strong>介绍:affix!!!</strong></h3>
+                                   
+                                    <p>它可以让侧边栏<span class="has-inline-color has-vivid-cyan-blue-color"><strong>灵活</strong></span>的固定在侧面，像这样👇</p>
+                                    
+                                    <p>链接:<a style="font-style: italic;" href="https://xingye.me/?p=195"><span class="has-inline-color has-vivid-cyan-blue-color">使用了affix的sidebar</span></a></p>
+                                    
+                                    <h4><strong>实现原理:</strong></h4>
+                                    
+                                    <p>使用了affix的侧边栏会在<strong>页面处于顶端时</strong>自动为其添加一个名为<strong>affix-top的class</strong>。这个class中没有任何内容。 此时的sidebar会随着页面滚动</p>
+                                    
+                                    <p>当页面<strong>滚动超过偏移值top</strong>(即sidebar顶端与其父元素顶端的距离)时自动将affix-top移除，并添加一个class <strong>affix</strong>,由于这个class中含有position:fixed;所以页面会固定在侧面，不随页面滚动，这个class规定了sidebar固定时的位置和状态</p>
+                                    
+                                    <p>当页面<strong>滚动超过偏移值bottom</strong>(即sidebar低端与其父元素低端的距离)时自动将affix移除，并添加一个class <strong>affix</strong>-<strong>bottom</strong>，通过这个class将显示方式修改为absolute</p>
+                                   
+                                    <p>以上自动添加的三个class都是可以用自己写css覆盖掉</p>
+                                    
+                                    <h4><strong>实现方法:</strong></h4>
+                                    
+                                    <p>首先前往<a href="https://v4.bootcss.com/docs/getting-started/download/"><span class="has-inline-color has-vivid-cyan-blue-color">https://v4.bootcss.com/docs/getting-started/download/</span></a>将下图<strong><span class="has-inline-color has-vivid-cyan-blue-color">蓝色框</span></strong>中的三个<strong>js文件</strong>添加到页面中</p>
+                                    
+                                    <img src="https://dataerror.xyz/wp-content/uploads/2020/12/DSG@4F7@J87G0J9N6-1024x410.png">
+                                  
+                                    <p><strong>在想要添加affix的sidebar的属性中添加一条data-spy="affix"</strong></p>
+                                   
+                                    <p><strong>编写jquery</strong></p>
+                                    
+                                    <p><strong>重写三个affix</strong></p>
+                                    
+                                    <p><span class="has-inline-color has-cyan-bluish-gray-color">别问为什么只有两个，我也不知道</span></p>
+                                    
+                                    <p><strong>注意</strong>:使用了position:fixed之后必须将其宽度设置为<strong>固定值</strong>，否则可能会出现显示异常,这个固定值的确切数值可以在审查元素界面的最下方获得</p>
+                                    
+                                    </div>
+                                <div class="entry-footer">
+                                    <div class="post-like text-center">
+                                        <a  class="love"><i class="fa fa-thumbs-o-up"></i>点赞</a>
+                                        <a  class="share"><i class="fa fa-share-alt"></i>分享</a>
+                                    </div>
+                                    <div class="entry-footer-tags clearfix">
+                                        <div class="pull-left">
+                                            <i class="fa fa-tags"></i>
+                                            <a>START</a>
+                                            <a>START UP</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="aside scrollspy article-sidebar"  >
+                        <div id="sidebar" data-spy="affix"> 
+                            <div class="widget">
+                                <h4 class="aside-image-title">来杯咖啡~</h4>
+                                <img src="img/-1.jpg" >
+                            </div>
+    
+                            <div class="widget widget-posts clearfix">
+                                <ul id="tabul" class="nav visiable-lg">
+                                    <li class="active"><a>最新文章</a></li>
+                                    <li><a>热点文章</a></li>
+                                    <li><a>随机文章</a></li>
+                                </ul>
+                                <ul id="tabul" class="nav visiable-md">
+                                    <li class="active"><a>最新</a></li>
+                                    <li><a>热点</a></li>
+                                    <li><a>随机</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="newst">
+                                        <ul class="list-group">
+                                           <a class="list-group-item">
+                                               <i class="fa fa-book"></i>
+                                               如何做出看起来很高级的页面
+                                            </a>
+                                           <a class="list-group-item">
+                                            <i class="fa fa-book"></i>
+                                            手把手教你新建项目(Create New Project)
+                                            </a>
+                                           <a class="list-group-item">
+                                            <i class="fa fa-book"></i>
+                                            CSS盒子模型详解
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class=" text-center footer-container">
+                        <p class="social-icons">
+                            <a target="_blank" rel="nofollow" href="https://github.com/shaft-64">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </p>
+                        <p>
+                            &copy;2020
+                            <a href="https://dataerror.xyz">DataErr0r</a>
+                            ALL RIGHTS RESERVED.
+                            <br/>
+                            theme
+                            <a href="">snape</a>
+                            REmade by 
+                            <a href="">eyewis</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/sanpe-diy.js"></script>   
+</body>
+</html>

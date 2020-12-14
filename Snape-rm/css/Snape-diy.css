@@ -369,6 +369,7 @@ a:focus,a:hover {
 }
 
 .footer p{
+    margin: 0 auto;
     color: hsla(0, 0%, 100%, .3)!important;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -379,7 +380,7 @@ a:focus,a:hover {
     color: hsla(0,0%,100%,.5);
 }
 .footer-container{
-    margin-left: 30%;
+    margin: 0 auto;
 }
 .social-icons>a i{
     font-size: 30px;
@@ -448,6 +449,57 @@ a:focus,a:hover {
     font-family: Microsoft Yahei Light;
 }
 
+.w-bg{
+    position: relative;
+    height: 650px;
+ }
+ .w-bg-blur{
+     float: left;
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     filter: blur(15px);
+ }
+ 
+ .welcome-info{
+     width: 100%;
+     position:absolute;
+     padding: 200px 0;
+ }
+ 
+ .welcome-subtext{
+     display: table;
+     margin: 0 auto 30px;
+     padding: 0 15px 30px;
+     font-size: 24px;
+     font-family: Microsoft Yahei Light;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ }
+ .welcome-text{
+     display: table;
+     font-size: 56px;
+     color: #000;
+     font-family: Microsoft Yahei Light;
+     margin: 0 auto 30px;
+ }
+ .enter{
+     display: table;
+     margin: 45px auto 0;
+     font-size: 14px;
+     padding: 12px 30px;
+     border: 1px solid #000;
+     color: #000;
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-family: Microsoft Yahei Light;
+     transition: all 0.3s;
+ }
+ .enter:hover{
+     background-color: #000;
+     color: #FFF!important;
+     cursor: pointer;
+ }
 
 
 .fa-calender::before{
@@ -482,6 +534,12 @@ a:focus,a:hover {
 }
 .fa-close::before{
     content: "\f00d";
+}
+.fa-moon::before{
+    content: "\f186";
+}
+.fa-sun::before{
+    content: "\f185";
 }
 @media (min-width:786px){
     .container{

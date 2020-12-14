@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/Snape-diy.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <title>媒体查询(@media)与响应式布局</title>
+</head>
+<body data-spy="scroll" data-target="#sidebar">
+    <div class="wrapper">
+        <!--header-->
+        <div class="header">
+            <div id="search-panel" class="top-search-hidden display-none">
+                <div class="container">
+                    <div class="input-group clearfix ">
+                        <span class="input-group-addon float-left">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="text" id="s" name="s" placeholder="Search..." class="form-contorl">
+                        <span class="input-group-addon clearfix float-right" id="a-close">
+                            <i class="fa fa-close"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container clearfix">
+                <div class="navbar-header">
+                    <a href="page.html" class="nav-title">DataErr0r</a>
+                </div>
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search">
+                            <a id="a-search" href=#>
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <a id="a-mode" href=#>
+                                <i id="sun-moon" class="fa fa-moon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <!--banner-->
+        <div class="pageheader headtbanner
+        " style="background-image: url(https://dataerror.xyz/wp-content/uploads/2020/11/86ZGNDYD7RLK16WFXNH0A.jpg);background-position: center">
+            <div class="container container-title text-center">
+                <h2 class="title">
+                    媒体查询(@media)与响应式布局
+                </h2>
+
+                <div class="text-center post-meta">
+                        <i class="fa fa-calender"></i>      <span>2020/7/1</span>
+                        <i class="fa fa-commenting-o"></i>  <span>0&nbsp;Comments</span>
+                        <i class="fa fa-eye"></i>           <span>80&nbsp;views</span> 
+                        <i class="fa fa-thumbs-o-up"></i>   <span>1&nbsp;Times</span>  
+                </div>
+            </div>
+        </div>
+
+        <div class="post-section post-main">
+            <div class="container">
+                <div class="row">
+                    <div class="section">
+                        <div class="article">
+                            <div class="post-inner post-border">
+                                <div class="post-content">
+                                  
+                                    <p>如下👇</p>
+                                
+                                    <figure class="wp-block-image size-large"><img src="https://dataerror.xyz/wp-content/uploads/2020/11/FMWTJ9NKLLYQ5V3OZI.png" alt="" class="wp-image-153"/></figure>
+                                    
+                                    <p>上面这个东西我也看不懂，但是如果要做到响应式布局就需要根据不同的屏幕大小使用不同的布局和样式</p>
+                                   
+                                    <hr class="wp-block-separator"/>
+                                    
+                                    <p><strong>介绍 @media screen !!!</strong></p>
+                                    
+                                    <p>它可以帮助你在<strong>不同的屏幕尺寸</strong>中使用<strong>不同的布局和样式</strong></p>
+                                    
+                                    <p>这很<strong><span class="has-inline-color has-luminous-vivid-amber-color">“</span><span class="has-inline-color has-vivid-cyan-blue-color">简</span><span class="has-inline-color has-vivid-purple-color">单</span><span class="has-inline-color has-vivid-green-cyan-color">”</span><span class="has-inline-color has-pale-pink-color">!</span></strong></p>
+                                    
+                                   <p>
+                                       
+                                    
+                                    <p>min-width:value则表示当<strong>屏幕宽度&gt;value</strong>时应用其中的css</p>
+                                    
+                                    <p>max-width:value则表示当<strong>屏幕宽度&lt;value</strong>时应用其中的css</p>
+                                    
+                                    <p><s>其中的screen and不知道是什么意思，反正我删掉好像也没什么影响</s></p>
+                                    
+
+                                    <p>
+                                        @media (max-width:991px){<br/>
+                                            &nbsp;&nbsp;&nbsp;.aside{<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;display: none;<br/>
+                                                &nbsp;&nbsp;&nbsp;}<br/>
+                                        .section{<br/>
+                                            &nbsp;&nbsp;&nbsp;     width: 100%;<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                                        }<br/>
+                                    </p>
+
+                                   
+                                    <p>上面这段代码表示，在屏幕宽度小于991px时，将侧边的导航栏(.aside)的显示方式设置为none，并将页面主体(.section)的宽度设置为100%。</p>
+                                   
+                                    <p><strong>效果图</strong></p>
+                                    
+                                    <figure class="wp-block-image size-large"><img src="https://dataerror.xyz/wp-content/uploads/2020/11/image-3-1024x677.png" alt="" class="wp-image-155"/><figcaption><strong>宽度大于991px时的效果</strong></figcaption></figure>
+                                   
+                                    <figure class="wp-block-image size-large"><img src="https://dataerror.xyz/wp-content/uploads/2020/11/image-2-1024x783.png" alt="" class="wp-image-154"/><figcaption><strong>宽度小于991px时的效果</strong></figcaption></figure>
+                                    
+                                    <p>不仅仅是显示方式和宽度，你可以设置和修改任何你想在不同屏幕宽度下应用的样式，<strong>它很<span class="has-inline-color has-pale-cyan-blue-color">灵活</span></strong>。</p>
+                                    
+                                    <p><strong>值得注意的地方</strong></p>
+                                    
+                                    <p>@media screen 不仅仅可以用于不同设备的响应式布局，还可以应用于<strong>网页大小调整时</strong>对页面元素的属性进行调整，使页面在<strong>任何宽度</strong>下都能<strong>保持其结构</strong>，但这往往需要设置<strong>多个阈值</strong>，这时就需要注意多个媒体查询在css中的<strong>设置顺序</strong>，顺序错误会使有些媒体查询的效果被覆盖，这个我也解释不清楚，总之如果效果有问题可以试着自己调整顺序然后调试(好屑啊这个作者）</p>
+                                    
+                                    <p><span class="has-inline-color has-cyan-bluish-gray-color"><s>太棒了，又水了一篇</s></span></p>
+                                    
+                                </div>
+                                <div class="entry-footer">
+                                    <div class="post-like text-center">
+                                        <a  class="love"><i class="fa fa-thumbs-o-up"></i>点赞</a>
+                                        <a  class="share"><i class="fa fa-share-alt"></i>分享</a>
+                                    </div>
+                                    <div class="entry-footer-tags clearfix">
+                                        <div class="pull-left">
+                                            <i class="fa fa-tags"></i>
+                                            <a>START</a>
+                                            <a>START UP</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="aside scrollspy article-sidebar"  >
+                        <div id="sidebar" data-spy="affix"> 
+                            <div class="widget">
+                                <h4 class="aside-image-title">来杯咖啡~</h4>
+                                <img src="img/-1.jpg" >
+                            </div>
+    
+                            <div class="widget widget-posts clearfix">
+                                <ul id="tabul" class="nav visiable-lg">
+                                    <li class="active"><a>最新文章</a></li>
+                                    <li><a>热点文章</a></li>
+                                    <li><a>随机文章</a></li>
+                                </ul>
+                                <ul id="tabul" class="nav visiable-md">
+                                    <li class="active"><a>最新</a></li>
+                                    <li><a>热点</a></li>
+                                    <li><a>随机</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="newst">
+                                        <ul class="list-group">
+                                           <a class="list-group-item">
+                                               <i class="fa fa-book"></i>
+                                               如何做出看起来很高级的页面
+                                            </a>
+                                           <a class="list-group-item">
+                                            <i class="fa fa-book"></i>
+                                            手把手教你新建项目(Create New Project)
+                                            </a>
+                                           <a class="list-group-item">
+                                            <i class="fa fa-book"></i>
+                                            CSS盒子模型详解
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class=" text-center footer-container">
+                        <p class="social-icons">
+                            <a target="_blank" rel="nofollow" href="https://github.com/shaft-64">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </p>
+                        <p>
+                            &copy;2020
+                            <a href="https://dataerror.xyz">DataErr0r</a>
+                            ALL RIGHTS RESERVED.
+                            <br/>
+                            theme
+                            <a href="">snape</a>
+                            REmade by 
+                            <a href="">eyewis</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/sanpe-diy.js"></script>   
+</body>
+</html>
